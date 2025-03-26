@@ -1,0 +1,129 @@
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .navbar-nav .nav-item .btn {
+    background-color: #3F51B5; /* Botão branco */
+    color: #FFFFFF; /* Texto preto */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    width: 18rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar .navbar-nav .nav-item .btn:hover {
+    background-color: #1A237E; /* Azul médio no hover */
+    color: #FFFFFF; /* Texto branco no hover */
+}
+
+.intro-section {
+    margin-top: 180px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    gap: 50px;
+}
+
+.intro-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.intro-section .divider {
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, black, transparent);
+    height: 400px;
+}
+
+.intro-section .text-content {
+    flex: 1;
+}
+
+.logo {
+    width: 180px;
+    height: auto;
+}
+
+.perfilImg {
+    width: 28rem;
+}
+
+.carousel-container {
+    width: 80%;
+    height: 500px; /* Altura fixa para encaixar o fundo */
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px); /* Aplica o desfoque */
+    transition: background-image 0.5s ease-in-out; /* Suaviza a troca */
+    z-index: 0; /* Fica atrás das imagens */
+}
+
+.background-blur::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Camada escura para contraste */
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%; /* Garante que o carousel ocupe o espaço total */
+    justify-content: center;
+    position: relative;
+    z-index: 2; /* Garante que as imagens fiquem na frente */
+}
+
+.carousel img {
+    width: 80%; /* Ajusta o tamanho da imagem */
+    max-width: 500px; /* Evita que fique muito grande */
+    height: auto; /* Mantém a proporção */
+    border-radius: 10px;
+    object-fit: cover;
+    display: block;
+    margin: auto; /* Centraliza dentro do slide */
+    z-index: 3; /* Mantém as imagens em primeiro plano */
+}
+
+.carousel-control-prev, .carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: black;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* Ajuste para telas menores */
+@media (max-width: 600px) {
+    .carousel-container {
+        width: 90%;
+    }
+    .prev, .next {
+        padding: 5px;
+    }
+}
